@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "test.js",
-    "init-registry": "npm config set registry http://registry.npmjs.org/",
-    "install-globals": "npm install -g rimraf",
-    "init": "npm run install-globals && rimraf node_modules && npm run init-registry && npm install && npm run build",
+    "setup-globals": "npm install -g rimraf globcp",
+    "setup-clean": "rimraf node_modules",
+    "setup": "npm run setup-globals && npm run setup-clean && npm install && npm run build",
+    "copy-react": "npm run copy-react-js && npm run copy-react-dom",
+    "copy-react-js": "copy node_modules\\react\\dist\\react.min.js dist",
+    "copy-react-dom": "copy node_modules\\react-dom\\dist\\react-dom.min.js dist",
+    "copy-html": "copy index.html dist",
     "clean": "rimraf dist",
-    "build": "npm run clean && webpack"
+    "build": "npm run clean && webpack && npm run copy-react && npm run copy-html"
   },
   "keywords": [
     "spending",
