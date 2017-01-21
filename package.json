@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "test.js",
-    "build": "webpack",
-    "clean": "rimraf dist"
+    "init-registry": "npm config set registry http://registry.npmjs.org/",
+    "install-globals": "npm install -g rimraf",
+    "init": "npm run install-globals && rimraf node_modules && npm run init-registry && npm install && npm run build",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack"
   },
   "keywords": [
     "spending",
@@ -14,6 +17,7 @@
   ],
   "author": "Mehuge",
   "license": "MIT",
+  "repository": "Mehuge/SpendingTracker",
   "dependencies": {
     "@types/react": "^15.0.1",
     "@types/react-dom": "^0.14.20",
