@@ -1,0 +1,28 @@
+{
+  "name": "spendingtracker",
+  "version": "1.0.0",
+  "description": "Track your spending month by month",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "build": "webpack",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "spending",
+    "tracker"
+  ],
+  "author": "Mehuge",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^15.0.1",
+    "@types/react-dom": "^0.14.20",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^2.2.4",
+    "source-map-loader": "^0.1.6",
+    "typescript": "=2.1.1"
+  }
+}
